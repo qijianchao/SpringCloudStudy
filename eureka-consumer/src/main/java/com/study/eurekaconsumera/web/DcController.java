@@ -1,7 +1,5 @@
-package com.study.eurekaconsumer.web;
+package com.study.eurekaconsumera.web;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;

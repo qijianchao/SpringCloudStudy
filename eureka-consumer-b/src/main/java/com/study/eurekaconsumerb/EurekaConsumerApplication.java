@@ -1,4 +1,4 @@
-package com.study.eurekaconsumer;
+package com.study.eurekaconsumerb;
 
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;

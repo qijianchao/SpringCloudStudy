@@ -1,0 +1,55 @@
+# 端口
+server:
+  port: 1202
+
+# 应用名称
+spring:
+  application:
+    name: eureka-consumer
+
+  # REDIS (RedisProperties)
+  # Redis数据库索引（默认为0）
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+    timeout: 300
+
+eureka:
+  instance:
+    # 使用 ip 代替实例名
+    prefer-ip-address: true
+    # 实例的主机名
+    hostname: ${spring.cloud.client.ip-address}
+    # 实例的 ID 规则
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    serviceUrl:
+      # 注册中心地址
+      defaultZone: http://${eureka.instance.hostname}:1001/eureka/
+
+jwt:
+  secret:
+    key: 123456
+  refresh:
+    token:
+      key:
+        format: JWT_REFRESH_TOKEN::%s
+  blacklist:
+    key:
+      format: JWT_BLACKLIST::%s
+
+token:
+  expire:
+    time: 60000
+
+refresh:
+  token:
+    expire:
+      time: 120000
